@@ -13,7 +13,7 @@ public class SleepCommand implements Command
     }
     public void execute() throws Exception
     {
-        long currentTime=System.currentTImeMillis();
+        long currentTime=System.currentTimeMillis();
         if(!started)
         {
             started=true;
@@ -29,3 +29,4 @@ public class SleepCommand implements Command
             engine.addCommand(wakeupCommand);
         }
     }
+}

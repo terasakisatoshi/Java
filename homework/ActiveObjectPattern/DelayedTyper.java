@@ -16,7 +16,7 @@ public class DelayedTyper implements Command
         };
         engine.addCommand(
             new SleepCommand(20000,engine,stopCommand));
-        engine.run():
+        engine.run();
     }
     public DelayedTyper(long delay, char c){
         itsDelay = delay;
