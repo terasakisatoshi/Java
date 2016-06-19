@@ -5,7 +5,8 @@ public class DelayedTyper implements Command
     private static ActiveObjectEngine engine = 
         new ActiveObjectEngine();
     private static boolean stop = false;
-    public static void main(String args[]){
+    public static void main(String args[])
+    {
         engine.addCommand(new DelayedTyper(100,'1'));
         engine.addCommand(new DelayedTyper(300,'3'));
         engine.addCommand(new DelayedTyper(500,'5'));
