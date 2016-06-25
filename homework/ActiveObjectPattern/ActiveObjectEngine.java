@@ -13,7 +13,12 @@ public class ActiveObjectEngine
         {
             Command c = (Command) itsCommands.getFirst();
             itsCommands.removeFirst();
-            c.execute();
+            try{
+                c.execute();
+            }
+            catch(Exception e){
+
+            }
         }
     }
 }
