@@ -15,19 +15,22 @@ public class LoginFrame extends Frame implements ActionListener,Mediator{
     private ColleagueButton buttonCancel;
 
      public LoginFrame(String title){
+
         super(title);
         setBackground(Color.lightGray);
         setLayout(new GridLayout(4,2));
+        
         createColleagues();
-    
+        //create controls
         add(checkGuest);
         add(checkLogin);
         add(new Label("Username;"));
         add(textUser);
         add(new Label("Password"));
         add(textPass);
+        add(buttonOk);
         add(buttonCancel);
-    
+        //initial setting 
         colleagueChanged();
         //表示
         pack();
@@ -36,20 +39,21 @@ public class LoginFrame extends Frame implements ActionListener,Mediator{
     public void createColleagues(){
         CheckboxGroup g=new CheckboxGroup();
         checkGuest = new ColleagueCheckbox("Guest",g,true);
-        checkGuest = new ColleagueCheckbox("Guest",g,true);
-        textUser= new ColleagueTextField("",10);
-        textPass=new ColleagueTextField("",10);
+        checkLogin = new ColleagueCheckbox("Login",g,true);
+        textUser = new ColleagueTextField("",10);
+        textPass = new ColleagueTextField("",10);
         textPass.setEchoChar('*');
-        buttonOk=new ColleagueButton("OK");
-        buttonCancel=new ColleagueButton("Cancel");
-        //set Mediator
-    
+        buttonOk = new ColleagueButton("OK");
+        buttonCancel = new ColleagueButton("Cancel");
+
+        //set Mediator    
         checkGuest.setMediator(this);
         checkLogin.setMediator(this);
         textUser.setMediator(this);
         textPass.setMediator(this);
         buttonOk.setMediator(this);
         buttonCancel.setMediator(this);
+
         //set Listener
         checkGuest.addItemListener(checkGuest);
         checkLogin.addItemListener(checkLogin);
@@ -82,8 +86,11 @@ public class LoginFrame extends Frame implements ActionListener,Mediator{
             buttonOk.setColleagueEnabled(false);
         }
     }
+    // ok cancel button が押された後のきょどう
     public void actionPerformed(ActionEvent e){
         System.out.println(e.toString());
         System.exit(0);
     }
 }
+
+
