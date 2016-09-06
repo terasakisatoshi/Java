@@ -1,7 +1,7 @@
 package idcard;
 import framework.*;
 
-public class idcard extends Product{
+public class IDCard extends Product{
     private String owner;
     IDCard(String owner){
         System.out.println(owner + "のカードを作ります．");
